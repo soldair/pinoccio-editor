@@ -1,0 +1,35 @@
+{
+  "name": "pinoccio-editor",
+  "description": " editor / web ide for pinoccio!",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/soldair/pinoccio-editor.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "prepublish": "npm build && npm test",
+    "build": "browserify index.js -o pinoccio-editor.js -r ./fs.js:fs",
+    "watch": "watchify index.js -o pinoccio-editor.js -r ./fs.js:fs"
+  },
+  "browser": {
+    "fs": "./fs.js"
+  },
+  "author": "Ryan Day",
+  "dependencies": {
+    "binarysearch": "^0.2.4",
+    "brace": "~0.2.1",
+    "ecstatic": "^0.5.4",
+    "git-node": "^0.1.1",
+    "hyperquest": "^0.3.0",
+    "level-filesystem": "~1.0.1",
+    "level-js": "~2.1.6",
+    "levelup": "~0.18.5",
+    "walkdir": "0.0.7"
+  },
+  "devDependencies": {
+    "browserify": "~4.2.0",
+    "watchify": "~0.10.2",
+    "tape": "~2.13.3"
+  }
+}
